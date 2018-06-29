@@ -1,5 +1,5 @@
 # Python-Django
-Basic knowledge of Django
+Basic knowledge of Django and mysql
 
 环境: win10  Python3.6.4  Django2.0.6  Pycharm2018.1
 
@@ -13,5 +13,5 @@ Basic knowledge of Django
 
 4. 编写路由, 并指向工程中的url.py
 
-5. 编写模板index.html和edituser.html,  编写views, 实现简单的增删改查
+5. 编写模板index.html和edituser.html,  编写views, 实现简单的增删改查    http://127.0.0.1:8000/index/
 
