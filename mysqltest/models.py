@@ -8,6 +8,7 @@ __author__ = 'wade cheung'
 class UserInfo(models.Model):
     class Meta:
         db_table = 'user_test'
+        app_label = 'mysqltest'
 
     id = models.AutoField(max_length=12, db_column='id', primary_key=True)
     user = models.CharField(max_length=32, db_column='user', blank=True)
@@ -17,6 +18,7 @@ class UserInfo(models.Model):
 class Charactor(models.Model):
     class Meta:
         db_table = 'user_charactor'
+        app_label = 'mysqltest'
 
     cid = models.AutoField(max_length=11, db_column='CID', primary_key=True)
     charactor = models.CharField(max_length=255, db_column='charactor', blank=False)

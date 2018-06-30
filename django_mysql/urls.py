@@ -20,5 +20,6 @@ urlpatterns = [
 
     # url(r'^index', views.index),
 
-    url(r'^', include('mysqltest.url'))
+    url(r'^mysql/', include('mysqltest.url')),
+    url(r'^oracle/', include('oracletest.url'))
 ]

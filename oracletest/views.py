@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect
-
-from mysqltest.models import UserInfo
+from oracletest.models import UserInfo
 
 
 # Create your views here.
 
 def index(request):
     uInfo = UserInfo.objects.all()
-    return render(request, 'index1.html', {'userInfo': uInfo})
+    return render(request, 'index2.html', {'userInfo': uInfo})
 
 
 def adduser(request):
@@ -15,13 +14,13 @@ def adduser(request):
     uInfo.user = 'wade'
     uInfo.pwd = '000'
     uInfo.save()
-    return redirect('/mysql/index/')
+    return redirect('/oracle/index/')
 
 
 def deluser(request, uid):
     u = UserInfo.objects.get(id=int(uid))
     u.delete()
-    return redirect('/mysql/index/')
+    return redirect('/oracle/index/')
 
 
 def edituser(request, uid):
@@ -33,9 +32,9 @@ def edituser(request, uid):
         uInfo.user = user
         uInfo.pwd = password
         uInfo.save()
-        return redirect('/mysql/index/')
+        return redirect('/oracle/index/')
     elif request.method == 'GET':
         uInfo = UserInfo.objects.get(id=int(uid))
-        return render(request, 'edituser1.html', {'userInfo': uInfo})
+        return render(request, 'edituser2.html', {'userInfo': uInfo})
 
     return render('无此用户')

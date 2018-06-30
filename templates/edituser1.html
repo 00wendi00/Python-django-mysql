@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑用户</title>
+</head>
+<body>
+<form action="/mysql/edituser{{ userInfo.id  }}/" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="uid" value="{{ userInfo.id }}">
+    <input type="text" name="user" value="{{ userInfo.user }}"/>
+    <input type="text" name="pwd" value="{{ userInfo.pwd }}"/>
+    <input type="submit" name="提交"/>
+</form>
+</body>
+</html>
+

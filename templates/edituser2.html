@@ -5,7 +5,7 @@
     <title>编辑用户</title>
 </head>
 <body>
-<form action="/edituser{{ userInfo.id  }}/" method="POST">
+<form action="/oracle/edituser{{ userInfo.id  }}/" method="POST">
     {% csrf_token %}
     <input type="hidden" name="uid" value="{{ userInfo.id }}">
     <input type="text" name="user" value="{{ userInfo.user }}"/>

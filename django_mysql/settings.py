@@ -35,8 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mysqltest'
-    ''
+    'mysqltest',
+    'oracletest'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +75,10 @@ WSGI_APPLICATION = 'django_mysql.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'sqlite3'),
+    },
+    'db01': {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': '127.0.0.1',
         'PORT': '3306',
@@ -84,7 +88,24 @@ DATABASES = {
         'OPTIONS': {
             'init_command': 'set sql_mode="STRICT_TRANS_TABLES"',
         }
+    },
+    'db02': {
+        'ENGINE': 'django.db.backends.oracle',
+        'HOST': '127.0.0.1',
+        'PORT': '1521',
+        'NAME': 'orcl',
+        'USER': 'wendi',
+        'PASSWORD': '0000',
     }
+}
+
+DATABASE_ROUTERS = ['django_mysql.database_router.DatabaseAppsRouter']
+
+DATABASE_APPS_MAPPING = {
+    # example:
+    # 'app_name':'database_name',
+    'mysqltest': 'db01',
+    'oracletest': 'db02',
 }
 
 # Password validation
