@@ -21,5 +21,5 @@ urlpatterns = [
     # url(r'^index', views.index),
 
     url(r'^mysql/', include('mysqltest.url')),
-    url(r'^oracle/', include('oracletest.url'))
+    url(r'^oracle/', include('oracletest.url'))  # 将以oracle开头的请求缓存起来, 并传递给将要创建的oracletest/url.py中
 ]
