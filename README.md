@@ -5,7 +5,6 @@ Basic knowledge of Django and mysql
 
 
 ## django 基本页面和mysql的增删改查
--------------------------------------------------------------------------------------------
 
 1. 在项目目录中创建APP--django_mysql, 输入即可自动创建python manage.py startapp django_mysql
 
@@ -18,8 +17,8 @@ Basic knowledge of Django and mysql
 5. 编写模板index.html和edituser.html,  编写views, 实现简单的增删改查
 
 
+
 ## django url路由 + 多数据源(oracle, mysql)
--------------------------------------------------------------------------------------------
 
 1. 配置两类url路由--django_mysql.urls , 两套模板两套view , 区分oracle和mysql
 http://127.0.0.1:8000/mysql/index/
